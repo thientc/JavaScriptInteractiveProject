@@ -8,30 +8,36 @@
 	<script src="js/gallery.js"></script>
 </head>
 
-<body>
-	<header>
-		<nav>
-			<ul>
-				<li>test 1</li>
-				<li>test 2</li>
-			</ul>
-		</nav>
-	</header>
-
+<body onload="addTabIndex()">
 	<div id="image">
 		Hover over an image below to display here.
 	</div>
 
 	<img class="preview" alt="Styling with a Bandana"
 		src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" onmouseover="upDate(this)"
-		onmouseout="unDo()">
+		onfocus="upDate(this)" onfocusout="unDo()" onmouseout="unDo()">
 
 	<img class="preview" alt="With My Boy" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG"
-		onmouseover="upDate(this)" onmouseout="unDo()">
+		onfocus="upDate(this)" onfocusout="unDo()" onmouseover="upDate(this)" onmouseout="unDo()">
 
 	<img class="preview" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" alt="Young Puppy"
+		onfocus="upDate(this)" onfocusout="unDo()" onmouseover="upDate(this)" onmouseout="unDo()">
+	<img class="preview" src="images/images.jpeg" alt="Bacon with potatoe" onfocus="upDate(this)" onfocusout="unDo()"
 		onmouseover="upDate(this)" onmouseout="unDo()">
-
+	<img class="preview" src="images/images-2.jpeg" alt="Hambuger" onfocus="upDate(this)" onfocusout="unDo()"
+		onmouseover="upDate(this)" onmouseout="unDo()">
+	<img class="preview" src="images/images-3.jpeg" alt="Hambuger on dish" onfocus="upDate(this)" onfocusout="unDo()"
+		onmouseover="upDate(this)" onmouseout="unDo()">
 </body>
+<script>
+	function addTabIndex() {
+		const images = document.getElementsByTagName("img")
+		for (let i = 0; i < images.length; i++) {
+			console.log(images[i])
+			images[i].tabIndex = i + 1
+		}
+	}
+
+</script>
 
 </html>
